@@ -8,11 +8,13 @@ import okhttp3.RequestBody.Companion.toRequestBody
 import okhttp3.internal.EMPTY_REQUEST
 import android.util.Log
 
+/**
+ * Request executor to execute network requests using [OkHttpClient]
+ */
 internal class OkHttpRequestExecutor(private val okHttpClient: OkHttpClient): RequestExecutor {
 
     override suspend fun executeRequest(request: NetworkRequest): ClientNetworkResponse {
         val response = okHttpClient.newCall(request.toHttpRequest()).execute()
-        Log.d("Internal Response", response.toString())
         return object : ClientNetworkResponse {
             override val isSuccessful: Boolean = response.isSuccessful
             override val statusCode: Int = response.code
@@ -21,6 +23,9 @@ internal class OkHttpRequestExecutor(private val okHttpClient: OkHttpClient): Re
         }
     }
 
+    /**
+     * Builds a network request from [NetworkRequest] using OkHttp's request builder
+     */
     override fun NetworkRequest.toHttpRequest(): Request {
         // OkHttp's request builder object
         val builder = Request.Builder()
@@ -53,6 +58,7 @@ internal class OkHttpRequestExecutor(private val okHttpClient: OkHttpClient): Re
             requestBody = it.toRequestBody("application/json".toMediaTypeOrNull(), 0, it.size)
         }
 
+        // handle request type
         when (requestType) {
             RequestType.GET -> builder.get()
             RequestType.POST -> builder.post(requestBody)

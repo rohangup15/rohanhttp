@@ -7,6 +7,9 @@ import com.rohan.rohanhttp.onSuccess
 import com.rohan.rohannetworking.datasources.MovieRemoteDataSource
 import com.rohan.rohannetworking.models.Movie
 
+/**
+ * Interacts with remote data source to load popular movies in a paginated format
+ */
 class PopularMoviesPagingSource(
     private val remoteDataSource: MovieRemoteDataSource
 ) : PagingSource<Int, Movie>() {

@@ -1,5 +1,8 @@
 package com.rohan.rohanhttp
 
+/**
+ * Generic network response object from any network client
+ */
 @PublishedApi
 internal interface ClientNetworkResponse {
     val isSuccessful: Boolean

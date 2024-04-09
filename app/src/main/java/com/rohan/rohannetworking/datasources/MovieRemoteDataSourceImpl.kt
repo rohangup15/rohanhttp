@@ -11,6 +11,10 @@ import com.rohan.rohannetworking.models.MovieDetails
 import com.rohan.rohannetworking.models.ResponseDto
 import javax.inject.Inject
 
+/**
+ * Concrete implementation for fetching data from remote data source,
+ * Here, remote data source is the [CustomNetworkManager] to make a REST based API call
+ */
 class MovieRemoteDataSourceImpl @Inject constructor(private val manager: CustomNetworkManager) :
     MovieRemoteDataSource {
     override suspend fun getPopularMovies(

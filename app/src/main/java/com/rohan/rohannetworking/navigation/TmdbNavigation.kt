@@ -9,6 +9,10 @@ import androidx.navigation.navArgument
 import com.rohan.rohannetworking.ui.screens.DetailsScreen
 import com.rohan.rohannetworking.ui.screens.HomeScreen
 
+/**
+ * Root composable which acts the host for other screens in the app
+ * Contains the routing logic based on route names
+ */
 @Composable
 fun TmdbNavigation() {
     val navController = rememberNavController()

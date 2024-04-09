@@ -12,6 +12,9 @@ import com.rohan.rohannetworking.repositories.pagingsources.PopularMoviesPagingS
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
+/**
+ * Concrete implementation for [MovieRepository] to interact with [MovieRemoteDataSource]
+ */
 class MovieRepositoryImpl @Inject constructor(private val remoteDataSource: MovieRemoteDataSource) : MovieRepository {
     override suspend fun getPopularMovies(): Flow<PagingData<Movie>> =
         Pager(

@@ -4,6 +4,9 @@ import kotlin.contracts.ExperimentalContracts
 import kotlin.contracts.InvocationKind
 import kotlin.contracts.contract
 
+/**
+ * A generic network response blueprint, response type is passed by the calling app
+ */
 sealed class NetworkResponse<out T> {
     data class Success<out T>(val data: T) : NetworkResponse<T>()
     data class Error(val apiException: ApiException) : NetworkResponse<Nothing>()
