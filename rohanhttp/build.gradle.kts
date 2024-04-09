@@ -54,7 +54,7 @@ dependencies {
 publishing {
     publications {
         register<MavenPublication>("release") {
-            groupId = "com.github.rohan"
+            groupId = "com.github.rohangup15"
             artifactId = "rohanhttp"
             version = "1.0.0"
 
