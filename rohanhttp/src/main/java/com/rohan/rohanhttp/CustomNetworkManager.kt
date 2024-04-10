@@ -30,8 +30,12 @@ class CustomNetworkManager(clientType: NetworkClientType) {
 
                 if (response.isSuccessful) {
                     val responseBody = response.body
-                    val parsedResponse = parseResponseBody<T>(responseBody)
-                    NetworkResponse.Success(parsedResponse)
+                    try {
+                        val parsedResponse = parseResponseBody<T>(responseBody)
+                        NetworkResponse.Success(parsedResponse)
+                    } catch (e: Exception) {
+                        NetworkResponse.Error(ApiException("Error while parsing the response", 422))
+                    }
                 } else {
                     NetworkResponse.Error(ApiException(response.message ?: "Internal Error", response.statusCode))
                 }

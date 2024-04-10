@@ -75,6 +75,6 @@ dependencies {
     implementation(libs.androidx.paging.runtime)
     implementation(libs.androidx.paging.compose)
     implementation(libs.coil.compose)
-//    implementation(project(":rohanhttp"))
-    implementation("com.github.rohangup15:rohanhttp:1.0.1")
+    implementation(project(":rohanhttp"))
+//    implementation("com.github.rohangup15:rohanhttp:1.0.1")
 }
