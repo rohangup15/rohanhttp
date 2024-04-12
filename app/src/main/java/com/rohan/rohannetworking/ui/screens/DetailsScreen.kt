@@ -86,7 +86,9 @@ fun DetailsComposable(modifier: Modifier = Modifier, movieDetails: MovieDetails)
                     .fillMaxWidth()
                     .height(200.dp),
                 contentScale = ContentScale.Crop,
-                placeholder = painterResource(id = R.drawable.outline_image_24)
+                placeholder = painterResource(id = R.drawable.outline_image_24),
+                fallback = painterResource(id = R.drawable.outline_image_24),
+                error = painterResource(id = R.drawable.outline_image_24),
             )
         }
 

@@ -25,7 +25,7 @@ class MovieRemoteDataSourceImpl @Inject constructor(private val manager: CustomN
         manager.makeCall(
             NetworkRequest(RequestType.GET)
                 .url(Constants.BASE_URL)
-                .pathSegments("popular")
+                .pathSegments("movie", "popular")
                 .query(
                     mapOf(
                         "language" to LANGUAGE,
@@ -41,12 +41,14 @@ class MovieRemoteDataSourceImpl @Inject constructor(private val manager: CustomN
         manager.makeCall(
             NetworkRequest(RequestType.GET)
                 .url(Constants.BASE_URL)
-                .pathSegments("now_playing")
+                .pathSegments("discover","movie")
                 .query(
                     mapOf(
                         "language" to LANGUAGE,
                         "api_key" to API_KEY,
-                        "page" to pageNumber.toString()
+                        "page" to pageNumber.toString(),
+                        "sort_by" to "primary_release_date.desc",
+                        "include_video" to "true"
                     )
                 )
         )
@@ -55,7 +57,7 @@ class MovieRemoteDataSourceImpl @Inject constructor(private val manager: CustomN
         manager.makeCall(
             NetworkRequest(RequestType.GET)
                 .url(Constants.BASE_URL)
-                .pathSegments(movieId)
+                .pathSegments("movie", movieId)
                 .query(
                     mapOf(
                         "language" to LANGUAGE,

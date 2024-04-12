@@ -27,7 +27,9 @@ fun MovieListItem(modifier: Modifier = Modifier, title: String, posterPath: Stri
                 .clip(RoundedCornerShape(16.dp)),
             model = ImageRequest.Builder(LocalContext.current).data("${BASE_IMAGE_URL}${posterPath}").crossfade(true).build(),
             contentDescription = null,
-            placeholder = painterResource(id = R.drawable.outline_image_24)
+            placeholder = painterResource(id = R.drawable.outline_image_24),
+            fallback = painterResource(id = R.drawable.outline_image_24),
+            error = painterResource(id = R.drawable.outline_image_24),
         )
         Text(text = title)
     }
