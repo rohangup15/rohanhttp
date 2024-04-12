@@ -14,6 +14,8 @@ import javax.inject.Inject
 /**
  * Concrete implementation for fetching data from remote data source,
  * Here, remote data source is the [CustomNetworkManager] to make a REST based API call
+ * Can't write Unit tests for this as this has direct dependency on [CustomNetworkManager] which has
+ * suspend inline functions which can't be mocked
  */
 class MovieRemoteDataSourceImpl @Inject constructor(private val manager: CustomNetworkManager) :
     MovieRemoteDataSource {

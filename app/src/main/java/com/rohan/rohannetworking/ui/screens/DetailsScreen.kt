@@ -31,15 +31,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import androidx.lifecycle.ViewModel
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
-import com.rohan.rohanhttp.ApiException
 import com.rohan.rohanhttp.NetworkResponse
-import com.rohan.rohanhttp.onError
-import com.rohan.rohanhttp.onSuccess
 import com.rohan.rohannetworking.Constants.BASE_IMAGE_URL
-import com.rohan.rohannetworking.Constants.BASE_URL
 import com.rohan.rohannetworking.R
 import com.rohan.rohannetworking.models.MovieDetails
 import com.rohan.rohannetworking.ui.components.MovieListItem

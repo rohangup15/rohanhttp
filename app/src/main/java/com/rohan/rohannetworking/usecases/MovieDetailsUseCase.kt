@@ -1,6 +1,5 @@
 package com.rohan.rohannetworking.usecases
 
-import com.rohan.rohanhttp.NetworkResponse
 import com.rohan.rohannetworking.repositories.MovieRepository
 import javax.inject.Inject
 

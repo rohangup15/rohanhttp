@@ -10,7 +10,9 @@ import okhttp3.OkHttpClient
  * Network manager exposed to a client app, handles making network requests and returning appropriate
  * response/error
  * @param clientType: Type of client used to make an API call, as of now only OkHttp is supported,
- * can be extended to support other clients and gRPC as well
+ * can be extended to support other clients and gRPC as well,
+ * Can't write unit tests for this and it's direct dependencies as no tool supports writing UTs for suspend
+ * inline function
  */
 class CustomNetworkManager(clientType: NetworkClientType) {
 

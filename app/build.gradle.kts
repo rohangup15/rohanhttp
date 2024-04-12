@@ -50,6 +50,14 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+    // Paging test library has a dependency on logging which gives this error:
+    // https://github.com/mockk/mockk/issues/1182
+    // Workaround for it
+    testOptions {
+       unitTests {
+           isReturnDefaultValues = true
+       }
+    }
 }
 
 dependencies {
@@ -75,6 +83,9 @@ dependencies {
     implementation(libs.androidx.paging.runtime)
     implementation(libs.androidx.paging.compose)
     implementation(libs.coil.compose)
-    implementation(project(":rohanhttp"))
-//    implementation("com.github.rohangup15:rohanhttp:1.0.1")
+//    implementation(project(":rohanhttp"))
+    testImplementation(libs.mockk)
+    testImplementation(libs.kotlinx.coroutines.test)
+    implementation(libs.androidx.paging.testing.android)
+    implementation(libs.rohanhttp)
 }

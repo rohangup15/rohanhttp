@@ -2,10 +2,7 @@ package com.rohan.rohannetworking.viewmodels
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.rohan.rohanhttp.ApiException
 import com.rohan.rohanhttp.NetworkResponse
-import com.rohan.rohanhttp.onError
-import com.rohan.rohanhttp.onSuccess
 import com.rohan.rohannetworking.models.MovieDetails
 import com.rohan.rohannetworking.usecases.MovieDetailsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel

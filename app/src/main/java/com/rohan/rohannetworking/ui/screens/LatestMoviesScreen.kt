@@ -22,7 +22,6 @@ import androidx.paging.compose.collectAsLazyPagingItems
 import com.rohan.rohannetworking.models.Movie
 import com.rohan.rohannetworking.ui.components.MovieListItem
 import com.rohan.rohannetworking.viewmodels.LatestMoviesViewModel
-import com.rohan.rohannetworking.viewmodels.PopularMoviesViewModel
 
 @Composable
 fun LatestMoviesScreen(
